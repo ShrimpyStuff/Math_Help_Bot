@@ -1,7 +1,8 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { prefix, token, config } = require('./config.json');
+const { token, config } = require('./config.json');
+const prefix = "!";
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -16,6 +17,8 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+
+if (!message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
