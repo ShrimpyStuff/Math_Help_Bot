@@ -13,7 +13,7 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("Correct!");
+                  message.channel.send("💎Correct! 💎");
               } else  {
                   message.channel.send("Wrong.");
               }
@@ -26,7 +26,7 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("Correct!");
+                  message.channel.send("💎Correct! 💎");
               } else  {
                   message.channel.send("Wrong.");
               }
@@ -41,7 +41,7 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("Correct!");
+                  message.channel.send("💎Correct! 💎");
               } else  {
                   message.channel.send("Wrong.");
               }
@@ -56,7 +56,7 @@ module.exports = {
 					const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
 					collector.on('collect', message => {
 							if (message.content == answer) {
-									message.channel.send("Correct!");
+									message.channel.send("💎Correct! 💎");
 							} else  {
 									message.channel.send("Wrong.");
 							}
