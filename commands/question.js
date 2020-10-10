@@ -3,6 +3,7 @@ module.exports = {
 	description: 'question',
 	execute(message, args) {
     if (message.author.bot) return;
+		console.log(message.author.username);
     const Discord = require('discord.js');
     const q = Math.floor(Math.random() * 4);
     if (q == 0) {
