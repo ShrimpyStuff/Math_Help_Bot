@@ -3,7 +3,6 @@ module.exports = {
 	description: 'question',
 	execute(message, args) {
     if (message.author.bot) return;
-		console.log(message.author.username + " in " + message.guild.name);
     const Discord = require('discord.js');
     const q = Math.floor(Math.random() * 4);
 		const one = Math.floor(Math.random() * 51);
@@ -17,7 +16,6 @@ module.exports = {
           collector.on('collect', message => {
               if (message.content == answer) {
                   message.channel.send("💎Correct! 💎");
-									console.log(message.author.username + " in " + message.guild.name + " got an addition question correct. " + answer);
               } else  {
                   message.channel.send("Wrong.");
               }
@@ -29,7 +27,6 @@ module.exports = {
           collector.on('collect', message => {
               if (message.content == answer) {
                   message.channel.send("💎Correct! 💎");
-									console.log(message.author.username + " in " + message.guild.name + " got a subtraction question correct. " + answer);
               } else  {
                   message.channel.send("Wrong.");
               }
@@ -41,7 +38,6 @@ module.exports = {
           collector.on('collect', message => {
               if (message.content == answer) {
                   message.channel.send("💎Correct! 💎");
-									console.log(message.author.username + " in " + message.guild.name + " got a negative subtraction question correct. " + answer);
               } else  {
                   message.channel.send("Wrong.");
               }
@@ -53,7 +49,6 @@ module.exports = {
 					collector.on('collect', message => {
 							if (message.content == answer) {
 									message.channel.send("💎Correct! 💎");
-									console.log(message.author.username + " in " + message.guild.name + "got a negative addition question correct." + answer);
 							} else  {
 									message.channel.send("Wrong.");
 							}
