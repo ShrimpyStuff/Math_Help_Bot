@@ -1,8 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { token, config } = require('./config.json');
-const prefix = "!";
+const {prefix, token, config } = require('./config.json');
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
