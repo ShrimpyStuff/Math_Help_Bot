@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'questionr',
-	description: 'question',
+	description: 'Send a random math question to help you learn math',
 	execute(message, args) {
     if (message.author.bot) return;
     const Discord = require('discord.js');
