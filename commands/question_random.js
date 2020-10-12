@@ -54,11 +54,15 @@ module.exports = {
 							}
 					})
 		} else if (q == 4) {
-      const answer = one/two;
+			const answer = one/two;
+			const answera = Math.round(answer * 1000) / 1000;
+			function roundNum(answer) { Math.round(answer * 100) / 100;
+}
   		message.channel.send(one + " ÷ " + two);
+			message.channel.send(answer);
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
-              if (message.content == answer) {
+              if (message.content == answera) {
                   message.channel.send("💎Correct! 💎");
               } else  {
                   message.channel.send("Wrong.");

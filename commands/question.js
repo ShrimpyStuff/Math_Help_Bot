@@ -43,11 +43,12 @@ module.exports = {
               }
           })
     } else if (args[0] === "division") {
-      const answer = one/two;
-  		message.channel.send(one + " ÷ " + two);
+			const answer = one/two;
+			const answera = Math.round(answer * 1000) / 1000;
+			message.channel.send(one + " ÷ " + two);
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
-              if (message.content == answer) {
+              if (message.content == answera) {
                   message.channel.send("💎Correct! 💎");
               } else  {
                   message.channel.send("Wrong.");

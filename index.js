@@ -26,7 +26,6 @@ if (!message.content.startsWith(prefix)) return;
 if (message.content === "!invite") {message.channel.send("https://discord.com/api/oauth2/authorize?client_id=764271962087751731&permissions=346176&scope=bot");}
 
 const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-
 if (!command) return;
 
 try {
