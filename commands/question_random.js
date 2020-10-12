@@ -56,7 +56,6 @@ module.exports = {
 		} else if (q == 4) {
 			const answer = one/two;
 			const answera = Math.round(answer * 1000) / 1000;
-}
   		message.channel.send(one + " ÷ " + two);
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
