@@ -8,7 +8,8 @@ module.exports = {
 		const two = Math.floor(Math.random() * 51);
 		const onea = one-(one*2)
 		const twoa = two-(two*2)
-    if (!args.length) {message.channel.send("please add an argument: \naddition \nsubtraction \nmultiplication \ndivision \nor n addition/subtraction \nuse !questionr for random")
+    if (!args.length) {
+			message.channel.send("please add an argument: \naddition \nsubtraction \nmultiplication \ndivision \nor n addition/subtraction \nuse !questionr for random")
   } else if (args[0] === "addition") {
       const answer = one+two;
   		message.channel.send(one + " + " + two);
