@@ -17,12 +17,6 @@ client.once('ready', () => {
 
 client.on('message', message => {
 
-if (message.author.bot) return;
-
-	if (message.author.id == '491355138347368463' || message.author.id == '675391536451682324' || message.author.id == '537486856384675852') {
-		message.channel.send(message.content);
-	}
-
 if (!message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
