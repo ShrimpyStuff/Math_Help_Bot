@@ -8,17 +8,18 @@ module.exports = {
 		const two = Math.floor(Math.random() * 51);
 		const onea = one-(one*2)
 		const twoa = two-(two*2)
+const { prefix } = require('../config.json');
     if (!args.length) {
-			message.channel.send("please add an argument: \naddition \nsubtraction \nmultiplication \ndivision \nor n addition/subtraction \nuse !questionr for random")
+			message.channel.send(`please add an argument: \naddition \nsubtraction \nmultiplication \ndivision \nor n addition/subtraction \nuse ${prefix}questionr for random`)
   } else if (args[0] === "addition") {
       const answer = one+two;
   		message.channel.send(one + " + " + two);
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("💎Correct! 💎");
+                  correct();
               } else  {
-                  message.channel.send("Wrong.");
+                  wrong(answer);
               }
           })
     } else if (args[0] === "subtraction") {
@@ -27,9 +28,9 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("💎Correct! 💎");
+                  correct();
               } else  {
-                  message.channel.send("Wrong.");
+                  wrong(answer);
               }
           })
     } else if (args[0] === "multiplication") {
@@ -38,9 +39,9 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("💎Correct! 💎");
+                  correct();
               } else  {
-                  message.channel.send("Wrong.");
+                  wrong(answer);
               }
           })
     } else if (args[0] === "division") {
@@ -50,9 +51,9 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answera) {
-                  message.channel.send("💎Correct! 💎");
+                  correct();
               } else  {
-                  message.channel.send("Wrong.");
+                  wrong(answer);
               }
           })
     } else if (args[0] === "n" && args[1] === "subtraction") {
@@ -61,9 +62,9 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("💎Correct! 💎");
+                  correct();
               } else  {
-                  message.channel.send("Wrong.");
+                  wrong(answer);
               }
           })
     } else if (args[0] === "n" && args[1] === "addition") {
@@ -72,11 +73,25 @@ module.exports = {
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1});
           collector.on('collect', message => {
               if (message.content == answer) {
-                  message.channel.send("💎Correct! 💎");
+                  correct();
               } else  {
-                  message.channel.send("Wrong.");
+                  wrong(answer);
               }
           })
     }
+
+		function wrong(answer) {
+			const wrong = new Discord.MessageEmbed()
+			.setTitle(`Wrong. The answer was ${answer}`);
+
+			message.channel.send(wrong);
+		}
+
+		function correct() {
+			const correct = new Discord.MessageEmbed()
+			.setTitle('💎 Correct! 💎');
+
+			message.channel.send(correct);
+		}
 	},
 };
